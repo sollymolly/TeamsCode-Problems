@@ -1,0 +1,4 @@
+for _ in range(int(input())):
+    tmp = input().split()
+    a, t, p = int(tmp[0]), int(tmp[1]), float(tmp[2])
+    print(a * t * (1 - p))
