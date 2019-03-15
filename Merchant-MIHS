@@ -1,4 +1,14 @@
-for _ in range(int(input())):
-    tmp = input().split()
+import os
+
+fin = open('input.txt', 'r')
+res = ''
+for _ in range(int(fin.readline().strip())):
+    tmp = fin.readline().strip().split()
     a, t, p = int(tmp[0]), int(tmp[1]), float(tmp[2])
-    print(a * t * (1 - p))
+    num = a * t * (1 - p)
+    res += str(num)
+    res += '\n'
+
+fout = open('output.txt', 'w')
+fout.write(res)
+fout.close() 
