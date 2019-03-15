@@ -1,0 +1,15 @@
+import os
+
+fin = open('input.txt', 'r')
+res = ''
+for _ in range(int(fin.readline().strip())):
+    num = 0
+    for i in range(1, int(fin.readline().strip()) + 1):
+        num += i * i
+    res += str(num)
+    res += '\n'
+
+fout = open('output.txt', 'w')
+fout.write(res)
+fout.close()
+
