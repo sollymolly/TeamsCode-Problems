@@ -1,0 +1,21 @@
+import os
+import math
+team_path = 'C:\\ABC'
+fin = open(os.path.join(team_path, 'input.txt'), 'r')
+res = ''
+for _ in range(int(fin.readline().strip())):
+    interest = 0
+    arr = fin.readline().strip().split()
+    a, b, c, d = int(arr[0]), int(arr[1]), float(arr[2]), int(arr[3])
+    interest = math.floor(a * math.pow(1 + c/b, b * d))
+    res += '${}'.format(interest)
+    res += '\n'
+
+fout = open(os.path.join(team_path, 'output.txt'), 'w')
+fout.write(res)
+fout.close()
+
+
+
+
+
