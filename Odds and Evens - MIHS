@@ -1,6 +1,6 @@
 import os
 
-team_path = 'C:\\ABC'
+team_path = 'C:\\Users\\accountname\\Desktop\\SampleFiles\\'
 
 fin = open(os.path.join(team_path, 'input.txt'), 'r')
 res = '' 
