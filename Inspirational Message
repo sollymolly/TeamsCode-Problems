@@ -1,0 +1,6 @@
+arr = []
+for _ in range(int(input())):
+    arr.append('\\*!{}!*/'.format(input()))
+print('/----------\\')
+[print(i) for i in arr]
+print('\\----------/')
