@@ -1,0 +1,29 @@
+import os
+
+fin = open('input.txt', 'r')
+
+def solve(ar):
+    word, num, words = ar[0], int(ar[1]), ar
+    words.pop(0)
+    words.pop(0)
+    word = list(word)
+
+    if len(word) > num:
+        return 'no'
+    for i in word:
+        if i not in words:
+            return 'no'
+        elif i in words:
+            words.remove(i)
+    return 'yes'
+
+for _ in range(int(fin.readline().strip())):
+    ar = fin.readline().strip().split()
+    print(solve(ar))
+    
+     
+
+            
+                    
+
+
