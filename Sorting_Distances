@@ -1,0 +1,7 @@
+import os 
+
+fin = open('input.txt', 'r')
+ar = []
+[ar.append(int(fin.readline().strip())) for _ in range(int(fin.readline().strip()))]
+ar = sorted(ar, reverse = True)
+[print(i) for i in ar]
