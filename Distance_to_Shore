@@ -1,0 +1,17 @@
+import os
+import math
+
+fin = open('input.txt', 'r')
+
+for _ in range(int(fin.readline().strip())):
+    arr = fin.readline().strip().split()
+    a, b, c, d = arr[0], float(arr[1]), arr[2], float(arr[3])
+    if a == 'C':
+        print(math.floor(math.pow((math.pow(b, 2) - math.pow(d, 2)), 0.5)))
+    elif c == 'C':
+        print(math.floor(math.pow((math.pow(d, 2) - math.pow(b, 2)), 0.5)))
+    else:
+        print(math.floor(math.pow((math.pow(b, 2) + math.pow(d, 2)), 0.5)))
+
+
+
