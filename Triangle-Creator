@@ -1,0 +1,15 @@
+import os
+
+fin = open('input.txt', 'r')
+space = '' 
+spacein = ''
+for _ in range(int(fin.readline().strip())):
+    num = int(fin.readline().strip())
+    space, spacein = ' ' * (num - 1), ''
+    for i in range(num):
+        if i == num - 1:
+            spacein = '_' * len(spacein)
+        print('{}/{}\\{}'.format(space, spacein, space))
+        spacein += '  '
+        space = space[:-1]
+
