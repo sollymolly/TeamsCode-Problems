@@ -1,0 +1,33 @@
+import os
+
+fin = open('input.txt', 'r')
+arr, res, new_arr = [], 0, []
+for _ in range(int(fin.readline().strip())):
+    res, index, indi, end = 0, 0, 0, 2
+    arr, new_arr, diagonal = [], [0, 0, 0], [0, 0]
+    for a in range(3):
+        arr.append(fin.readline().strip().split())
+        for b in range(3):
+            arr[a][b] = int(arr[a][b])
+
+    for i in arr:
+        for j in i:
+            new_arr[index] += j
+            index += 1  
+        if sum(i) != 15:
+            res += 1
+        diagonal[0] += i[indi]
+        diagonal[1] += i[end] 
+        
+        indi += 1
+        index = 0
+        end -= 1
+    for k in new_arr:
+        if k != 15:
+            res += 1
+    for l in diagonal:
+        if l != 15:
+            res += 1
+    print(res) 
+        
+    
