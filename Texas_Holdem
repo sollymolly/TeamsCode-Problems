@@ -1,0 +1,78 @@
+import os
+
+fin = open('input.txt', 'r')
+
+arr, a, c, res = [], [], [], []
+num, maxi = 0, 0
+
+
+for _ in range(int(fin.readline().strip())):
+    arr, a, c, res = [], [], [], []
+    num, maxi = 0, 0
+    for _ in range(13):
+        arr.append(0)
+    a = fin.readline().strip().split()
+    for i in a:
+        if i in 'AJKQ':
+            if i == 'A':
+                num = 14
+            elif i == 'J':
+                num = 11
+            elif i == 'Q':
+                num = 12
+            elif i == 'K':
+                num = 13
+            arr[num - 2] += 1
+        else: 
+            num = int(i)
+            arr[num - 2] += 1
+    
+    if 3 in arr:
+        for i, b in enumerate(arr):
+            if b == 3:
+                c.append(i)
+        maxi = max(c)
+        for i in range(3):
+            if maxi + 2 == 11:
+                res.append('J')
+            elif maxi + 2 == 12:
+                res.append('Q')
+            elif maxi + 2 == 13:
+                res.append('K')
+            elif maxi + 2 == 14:
+                res.append('A')
+            else:
+                res.append(maxi + 2)
+                res[i] = str(res[i])
+    else:
+        for i, b in enumerate(arr):
+            if b == 2:
+                c.append(i)
+        maxi = max(c)
+        for i in range(2):
+            if maxi + 2 == 11:
+                res.append('J')
+            elif maxi + 2 == 12:
+                res.append('Q')
+            elif maxi + 2 == 13:
+                res.append('K')
+            elif maxi + 2 == 14:
+                res.append('A')
+            else:
+                res.append(maxi + 2)
+                res[i] = str(res[i])
+    print(' '.join(res))
+
+
+
+       
+
+        
+
+        
+        
+
+
+
+    
+    
