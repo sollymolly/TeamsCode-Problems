@@ -1,0 +1,8 @@
+import os
+
+fin = open('input.txt', 'r')
+arr = []
+
+for _ in range(int(fin.readline().strip())):
+    arr = fin.readline().strip().split()
+    print((int(arr[0]) * int(arr[1]) + int(arr[2])) * int(arr[3]))
