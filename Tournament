@@ -1,0 +1,12 @@
+import os
+import math
+
+fin = open('input.txt', 'r')
+num, number = 0, 0
+
+for _ in range(int(fin.readline().strip())):
+    number = int(fin.readline().strip())
+    num = (number-1) * number * 5
+    print(num - math.ceil(num / (number * 2)) * number)
+
+
