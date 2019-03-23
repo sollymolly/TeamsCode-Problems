@@ -1,0 +1,33 @@
+import os
+
+team_path = 'C:\\ABC'
+
+fin = open(os.path.join(team_path, 'input.txt'), 'r')
+boo = True
+for _ in range(int(fin.readline().strip())):
+    a = fin.readline().strip()
+    b = fin.readline().strip()
+    for i in range(10):
+        if a[i] == 'A':
+            if b[i] != 'T':
+                print("Invalid")
+                boo = False
+                break
+        elif a[i] == 'T':
+            if b[i] != 'A':
+                print("Invalid")
+                boo = False
+                break
+        elif a[i] == 'C':
+            if b[i] != 'G':
+                print("Invalid")
+                boo = False
+                break
+        elif a[i] == 'G':
+            if b[i] != 'C':
+                print("Invalid")
+                boo = False
+                break
+    if boo == True:
+        print("Valid")
+    boo = True
