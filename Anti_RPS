@@ -1,0 +1,14 @@
+import os 
+
+team_path = 'C:\\ABC'
+fin = open(os.path.join(team_path, 'input.txt'), 'r')
+string = fin.readline().strip()
+new_string = ''
+for i in range(len(string)):
+    if string[i] == 'R':
+        new_string += 'S'
+    elif string[i] == 'S':
+        new_string += 'P'
+    else:
+        new_string += 'R'
+print(new_string)
