@@ -1,0 +1,21 @@
+import os
+
+fin = open('input.txt', 'r')
+ar = fin.readline().strip().split()
+new_arr, tup = [], []
+loc, res, swap, a, b = int(ar[0]), int(ar[1]), int(ar[2]), 0, 0
+
+for i in range(loc):
+    new_arr.append(i + 1)
+
+for _ in range(swap):
+    tup = []
+    loc, res, swap, a, b = int(ar[0]), int(ar[1]), int(ar[2]), 0, 0
+    tup = fin.readline().strip().split()
+    a, b = int(tup[0]) - 1, int(tup[1]) - 1
+    new_arr[a], new_arr[b] = new_arr[b], new_arr[a]
+
+print(new_arr.index(res) + 1)
+
+
+
