@@ -1,0 +1,16 @@
+import os
+
+team_path = 'C:\\ABC'
+fin = open(os.path.join(team_path, 'input.txt'), 'r')
+forloop = int(fin.readline().strip())
+arr = fin.readline().strip().split()
+num, index = 0, 0
+
+for _ in range(forloop):
+    num += max(int(arr[index]), int(arr[index+1]))
+    index += 2
+
+print(num)
+
+
+    
