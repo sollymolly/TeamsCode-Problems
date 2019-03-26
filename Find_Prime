@@ -1,0 +1,42 @@
+import os
+import math
+
+fin = open('input.txt', 'r')
+
+def prime1(check_num):
+    number = math.floor(math.pow(check_num, 0.5))
+    for i in range(2, number+1):
+        if check_num % i == 0:
+            return False
+    return True
+
+
+num_of_prime = 0 #active
+check_num = 2
+arr = []
+res = [] #active
+prime, N1, N2 = 0, 0, 0
+
+for _ in range(int(fin.readline().strip())):
+    num_of_prime = 0 #active
+    check_num = 2
+    arr = []
+    res = [] #active
+    prime, N1, N2 = 0, 0, 0
+    arr = fin.readline().strip().split()
+    prime, N1, N2 = int(arr[0]), int(arr[1]), int(arr[2])
+    while True:
+        if prime1(check_num):
+            num_of_prime += 1
+            if N1 < check_num and N2 > check_num:
+                res.append(str(int(math.pow(check_num, 2))))
+            else:
+                res.append(str(check_num))
+        check_num += 1
+        
+        if num_of_prime == prime:
+            break
+    
+    print(' '.join(res))
+
+
