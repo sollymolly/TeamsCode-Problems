@@ -1,0 +1,90 @@
+import os
+import math
+
+fin = open('input.txt', 'r')
+
+for _ in range(int(fin.readline().strip())):
+    check = 0
+    num = int(fin.readline().strip())
+    number = 0
+    res = [0, 'days', 0, 'hrs', 0, 'min', 0, 'sec']
+    days, hrs, minutes, sec = 0, 0, 0, 0
+    while True:
+        if num / 86400 > 1:
+            days += math.floor(num/86400)
+            num -= math.floor(num/86400)*86400
+            if num / 3600 > 1:
+                hrs += math.floor(num/3600)
+                num -= math.floor(num/3600)*3600
+                if num / 60 > 1:
+                    minutes += math.floor(num/60)
+                    num -= math.floor(num/60)*60
+                    sec += num
+                    break
+                elif num / 60 == 1:
+                    res[0] = days
+                    res[2] = hrs
+                    res[4] = minutes
+                    break
+                else:
+                    sec = num
+                    break
+            elif num / 3600 == 1:
+                hrs = 1
+                res[0] = days
+                res[2] = hrs
+                break
+            else:
+                if num / 60 > 1:
+                    hrs += math.floor(num/60)
+                    num -= math.floor(num/60)
+                    sec = num
+                    break
+                elif num / 60 == 1:
+                    res[0] = days
+                    res[2] = hrs
+                    res[4] = minutes
+                    break 
+                else:
+                    sec = num
+                    break                   
+                
+
+        elif num / 86400 == 1:
+            days = 1
+            break
+        else:
+            if num / 3600 > 1:
+                hrs += math.floor(num/3600)
+                num -= math.floor(num/3600)*3600
+                if num / 60 > 1:
+                    minutes += math.floor(num/60)
+                    num -= math.floor(num/60)*60
+                    sec += num
+                    break
+                elif num / 60 == 1:
+                    res[0] = days
+                    res[2] = hrs
+                    res[4] = minutes
+                    break
+                else:
+                    sec = num
+                    break
+            elif num / 3600 == 1:
+                hrs = 1
+                res[0] = days
+                res[2] = hrs
+                break
+            else:
+                if num / 60 > 1:
+                    check = math.floor(num/60)
+                    minutes += check
+                    num -= check*60
+                    sec = num
+                    break
+    res[0], res[2], res[4], res[6] = str(days), str(hrs), str(minutes), str(sec)
+    print(' '.join(res))
+
+
+
+
