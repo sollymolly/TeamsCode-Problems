@@ -28,7 +28,7 @@ for _ in range(int(fin.readline().strip())):
     while True:
         if prime1(check_num):
             num_of_prime += 1
-            if N1 < check_num and N2 > check_num:
+            if N1 <= check_num and N2 >= check_num:
                 res.append(str(int(math.pow(check_num, 2))))
             else:
                 res.append(str(check_num))
