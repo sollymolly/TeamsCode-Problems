@@ -1,0 +1,20 @@
+import os 
+
+fin = open('input.txt', 'r')
+alphabet = 'abcdefghijklmnopqrstuvwxyz .'
+ar = fin.readline().strip().split()
+index = 1
+arr = []
+res = []
+
+for i in range(28):
+    arr.append((alphabet[i], index))
+    index += 1
+
+for i in ar:
+    for tup in arr:
+        if int(i) == tup[1]:
+            res.append(tup[0])
+
+print(''.join(res))
+
