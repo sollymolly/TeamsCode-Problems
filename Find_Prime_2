@@ -1,0 +1,34 @@
+import math
+def isprime(num):
+    for i in range(2, math.floor(num ** 0.5) + 1):
+        if num % i == 0:
+            return False #iscomposite
+    return True #isprime
+
+N = int(input())
+for _ in range(N):
+    ar = input().split()
+    stop, K1, K2 = int(ar[0]), int(ar[1]), int(ar[2])
+    res = []
+    check = 2
+    while True:
+        if isprime(check):
+            if K1 <= check and check <= K2:
+                check = check ** 2
+                res.append(str(int(check)))
+                check = check ** 0.5
+                check += 1 
+            else:
+                res.append(str(int(check)))
+                check += 1 
+        else:
+            check += 1
+        if len(res) == stop:
+            break
+    print(' '.join(res))
+
+
+
+
+
+
