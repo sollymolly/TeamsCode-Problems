@@ -1,0 +1,39 @@
+import os
+
+
+fin = open('input.txt', 'r')
+N = int(fin.readline().strip())
+ar, count = [], []
+win, lose = {}, {}
+wins, loses = 0, 0
+
+for _ in range(N):
+    ar = fin.readline().strip().split()
+
+    if ar[0] not in count:
+        count.append(ar[0])
+
+    if ar[1] not in count:
+        count.append(ar[1]) 
+
+    if ar[0] in win.keys():
+        win[ar[0]] += 1
+    else:
+        win[ar[0]] = 1
+
+    if ar[1] in lose.keys():
+        lose[ar[1]] += 1
+    else:
+        lose[ar[1]] = 1
+
+for i in range(len(count)):
+    wins, loses = 0, 0
+    if count[i] in win:
+        wins = win[count[i]]
+    if count[i] in lose:
+        loses = lose[count[i]]
+    print('{} {}/{}'.format(count[i], wins, loses))
+
+    
+    
+
